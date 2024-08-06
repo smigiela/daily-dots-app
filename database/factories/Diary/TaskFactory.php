@@ -29,8 +29,8 @@ class TaskFactory extends Factory
             'type' => $this->faker->randomElement(['task', 'meeting', 'visit']),
             'status_change_date' => null,
             'due_date' => $this->faker->date('Y-m-d H:i:s'),
-            'start_time' => $this->faker->randomElement([null, $this->faker->time('H:i')]),
-            'stop_time' => $this->faker->randomElement([null, $this->faker->time('H:i')]),
+            'start_time' => $this->faker->randomElement([null, $this->faker->dateTime('Y-m-d H:i')]),
+            'stop_time' => $this->faker->randomElement([null, $this->faker->dateTime('Y-m-d H:i')]),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
         ];
     }
