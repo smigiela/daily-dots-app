@@ -33,7 +33,6 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <button wire:click="$dispatch('openPanel', 'Dupa romana tatrararara', 'App.Livewire.Sidebar)"> sidebar</button>
                 </div>
             </div>
 
