@@ -33,7 +33,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $tasks->links() }}
+                    <div class="mt-6">{{ $tasks->links() }}</div>
                 </div>
             </div>
         </div>
