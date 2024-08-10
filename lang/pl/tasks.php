@@ -15,6 +15,7 @@ return [
     'type' => 'rodzaj',
     'statusChangeDate' => 'data zmiany statusu',
     'dueDate' => 'data zakończenia',
+    'createdDate' => 'data utworzenia',
     'startTime' => 'czas rozpoczęcia',
     'stopTime' => 'czas zakończenia',
     'createView' => [
@@ -22,5 +23,10 @@ return [
     ],
     'editView' => [
         'title' => 'edycja zadania',
+    ],
+    'statuses' => [
+        'new' => 'nowe',
+        'in_progress' => 'w trakcie',
+        'complete' => 'zakończone',
     ]
 ];

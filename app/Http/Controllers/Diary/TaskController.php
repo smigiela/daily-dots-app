@@ -12,12 +12,12 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return view('modules.Diary.Tasks.index', ['tasks' => Task::all()]);
+        return view('Diary.Task.index', ['tasks' => Task::paginate(10)]);
     }
 
     public function create()
     {
-        return view('modules.Diary.Tasks.create');
+        return view('Diary.Task.create');
     }
 
     public function store(TaskCreateRequest $request)
@@ -34,7 +34,7 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
-        return view('modules.Diary.Tasks.edit', ['task' => $task]);
+        return view('Diary.Task.edit', ['task' => $task]);
     }
 
     public function update(TaskUpdateRequest $request, Task $task)

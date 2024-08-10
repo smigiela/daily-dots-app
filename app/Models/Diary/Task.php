@@ -2,6 +2,7 @@
 
 namespace App\Models\Diary;
 
+use App\Enums\Tasks\TaskStatusEnum;
 use App\Models\User;
 use App\Observers\Diary\Task\TaskObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
@@ -35,6 +36,8 @@ public $timestamps = false;
         'start_time'         => 'datetime:H:i',
         'end_time'           => 'datetime:H:i',
         'status_change_date' => 'datetime:Y-m-d H:i:s',
+        'created_at'         => 'datetime:Y-m-d H:i:s',
+        'status'             => TaskStatusEnum::class
     ];
 
     protected static function booted()
