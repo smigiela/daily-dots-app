@@ -4,64 +4,50 @@ namespace App\Http\Controllers\Diary;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tasks\TaskCreateRequest;
+use App\Http\Requests\Tasks\TaskUpdateRequest;
 use App\Models\Diary\Task;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('modules.Diary.Tasks.index', ['tasks' => Task::all()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('modules.Diary.Tasks.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(TaskCreateRequest $request)
     {
-        dd($task);
+        Task::create($request->validated());
+
+        return back();
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Task $task)
     {
 //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Task $task)
     {
         return view('modules.Diary.Tasks.edit', ['task' => $task]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Task $task)
+    public function update(TaskUpdateRequest $request, Task $task)
     {
-        dd($task);
+        $task->update($request->validated());
+
+        return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+
+        return back();
     }
 }

@@ -33,7 +33,7 @@ class TaskUpdateRequest extends FormRequest
             'status' => [Rule::enum(TaskStatusEnum::class)],
             'type' => [Rule::enum(TaskTypesEnum::class)],
             'status_change_date' => ['date_format:Y-m-d H:i:s', 'nullable'],
-            'due_date' => ['date_format:Y-m-d', 'nullable'],
+            'due_date' => ['date_format:Y-m-d H:i:s', 'nullable'],
             'start_time' => ['date_format:H:i:s', 'nullable'],
             'stop_time' => ['date_format:H:i:s', 'nullable'],
         ];

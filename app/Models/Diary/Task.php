@@ -3,12 +3,15 @@
 namespace App\Models\Diary;
 
 use App\Models\User;
+use App\Observers\Diary\Task\TaskObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Auth;
 
+#[ObservedBy([TaskObserver::class])]
 class Task extends Model
 {
     use HasFactory;
@@ -28,7 +31,7 @@ public $timestamps = false;
     ];
 
     protected $casts = [
-        'due_date'           => 'datetime:Y-m-d',
+        'due_date'           => 'datetime:Y-m-d H:i:s',
         'start_time'         => 'datetime:H:i',
         'end_time'           => 'datetime:H:i',
         'status_change_date' => 'datetime:Y-m-d H:i:s',
