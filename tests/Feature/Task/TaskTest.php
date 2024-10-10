@@ -57,7 +57,7 @@ class TaskTest extends TestCase
         $task = Task::factory()->create();
 
         $this->assertDatabaseCount('tasks', 1);
-        $this->delete('diary/tasks/' . $task->id)->assertStatus(302);
+        $this->actingAs($user)->delete('diary/tasks/' . $task->id)->assertStatus(302);
         $this->assertDatabaseCount('tasks', 0);
     }
 }

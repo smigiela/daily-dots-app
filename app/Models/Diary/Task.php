@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Auth;
 class Task extends Model
 {
     use HasFactory;
-public $timestamps = false;
+
+    public $timestamps = false;
     public CONST UPDATED_AT = false;
 
     protected $fillable = [
